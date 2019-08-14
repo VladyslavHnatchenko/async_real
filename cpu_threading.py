@@ -1,4 +1,4 @@
-import multiprocessing
+import concurrent.futures
 import time
 
 
@@ -7,8 +7,8 @@ def cpu_bound(number):
 
 
 def find_sums(numbers):
-    with multiprocessing.Pool() as pool:
-        pool.map(cpu_bound, numbers)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        executor.map(cpu_bound, numbers)
 
 
 if __name__ == "__main__":
@@ -17,4 +17,4 @@ if __name__ == "__main__":
     start_time = time.time()
     find_sums(numbers)
     duration = time.time() - start_time
-    print(f"Duration {duration} seconds.")
+    print(f"Duration {duration} seconds")

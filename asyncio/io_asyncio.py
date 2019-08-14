@@ -1,11 +1,11 @@
 import asyncio
-import time
 import aiohttp
+import time
 
 
 async def download_site(session, url):
     async with session.get(url) as response:
-        print("Read {0} from {1}".format(response.content_length, url))
+        print("read {0} from {1}".format(response.content_length, url))
 
 
 async def download_all_sites(sites):
@@ -25,4 +25,4 @@ if __name__ == "__main__":
     start_time = time.time()
     asyncio.run(download_all_sites(sites))
     duration = time.time() - start_time
-    print(f"Downloaded {len(sites)} sites in {duration} seconds.")
+    print(f"Downloaded {len(sites)} sites in {duration} seconds")

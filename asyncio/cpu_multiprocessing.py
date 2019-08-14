@@ -3,7 +3,7 @@ import time
 
 
 def cpu_bound(number):
-    return sum(i*i for i in range(number))
+    return sum(i * i for i in range(number))
 
 
 def find_sums(numbers):
@@ -17,4 +17,4 @@ if __name__ == "__main__":
     start_time = time.time()
     find_sums(numbers)
     duration = time.time() - start_time
-    print(f"Duration {duration} seconds.")
+    print(f"Duration {duration} seconds")

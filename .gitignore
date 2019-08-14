@@ -1,5 +1,4 @@
 .idea/
 venv/
-.migration/
-.migrations/
-
+__pycache__/
+*.pyc
